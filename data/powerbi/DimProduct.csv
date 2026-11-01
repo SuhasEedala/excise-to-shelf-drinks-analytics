@@ -1,0 +1,27 @@
+SKU,Product,Brand,Category,TaxBase,UnitsPerPack,LitresPerUnit,ABV,ProducerPriceAug26,DepositContainers,DepositStarts,PricePoint,LitresPerPack,StdDrinksPerPack,PackType,CategoryOrder,TaxCode
+B01,Southerly Lager 24x375ml Can,Southerly Brewing,Beer,Beer,24,0.375,0.046,17.4,24,Now,60,9.0,32.7,Multipack,1,BEER_PKG_FULL
+B02,Coastline Pale Ale 16x375ml Can,Southerly Brewing,Beer,Beer,16,0.375,0.052,12.4,16,Now,45,6.0,24.6,Multipack,1,BEER_PKG_FULL
+B03,Southerly Mid 24x375ml Can,Southerly Brewing,Beer,Beer,24,0.375,0.035,15.2,24,Now,50,9.0,24.9,Multipack,1,BEER_PKG_MID
+B04,Harbour Hazy IPA 4x440ml Can,Southerly Brewing,Beer,Beer,4,0.44,0.065,6.4,4,Now,25,1.76,9.0,Multipack,1,BEER_PKG_FULL
+B05,Southerly Light 24x375ml Bottle,Southerly Brewing,Beer,Beer,24,0.375,0.027,14.8,24,Now,45,9.0,19.2,Multipack,1,BEER_PKG_LOW
+B06,Old Quay Lager 30x375ml Block,Southerly Brewing,Beer,Beer,30,0.375,0.042,20.0,30,Now,65,11.25,37.3,Multipack,1,BEER_PKG_FULL
+R01,Southerly Vodka Soda 10x330ml Can,Southerly Spirits,RTD,Spirits,10,0.33,0.045,10.6,10,Now,45,3.3,11.7,Multipack,2,SPIRITS
+R02,Southerly Bourbon & Cola 10x375ml Can,Southerly Spirits,RTD,Spirits,10,0.375,0.048,10.5,10,Now,50,3.75,14.2,Multipack,2,SPIRITS
+R03,Margarita Seltzer 4x355ml Can,Southerly Spirits,RTD,Spirits,4,0.355,0.07,4.06,4,Now,25,1.42,7.8,Multipack,2,SPIRITS
+R04,Lime Hard Seltzer 10x330ml Can,Southerly Spirits,RTD,Spirits,10,0.33,0.04,9.4,10,Now,40,3.3,10.4,Multipack,2,SPIRITS
+S01,Quayside Dry Gin 700ml,Southerly Spirits,Spirits,Spirits,1,0.7,0.4,9.3,1,From 2027,70,0.7,22.1,Bottle/Cask,3,SPIRITS
+S02,Southerly Vodka 700ml,Southerly Spirits,Spirits,Spirits,1,0.7,0.37,5.2,1,From 2027,55,0.7,20.4,Bottle/Cask,3,SPIRITS
+S03,Harbour Spiced Rum 700ml,Southerly Spirits,Spirits,Spirits,1,0.7,0.35,6.3,1,From 2027,55,0.7,19.3,Bottle/Cask,3,SPIRITS
+S04,Southerly Single Malt 700ml,Southerly Spirits,Spirits,Spirits,1,0.7,0.43,22.0,1,From 2027,90,0.7,23.7,Bottle/Cask,3,SPIRITS
+S05,Night Shift Coffee Liqueur 700ml,Southerly Spirits,Spirits,Spirits,1,0.7,0.2,7.2,1,From 2027,40,0.7,11.0,Bottle/Cask,3,SPIRITS
+S06,Old Quay Brandy 700ml,Southerly Spirits,Spirits,Brandy,1,0.7,0.37,5.4,1,From 2027,50,0.7,20.4,Bottle/Cask,3,BRANDY
+W01,Southerly Estate Shiraz 750ml,Southerly Estate,Wine,WET,1,0.75,0.14,8.83,1,From 2027,20,0.75,8.3,Bottle/Cask,4,NONE
+W02,Southerly Estate Sauv Blanc 750ml,Southerly Estate,Wine,WET,1,0.75,0.125,6.1,1,From 2027,15,0.75,7.4,Bottle/Cask,4,NONE
+W03,Southerly Prosecco 750ml,Southerly Estate,Wine,WET,1,0.75,0.11,8.0,1,From 2027,20,0.75,6.5,Bottle/Cask,4,NONE
+W04,Southerly Cask Red 4L,Southerly Estate,Wine,WET,1,4.0,0.13,7.0,0,From 2027,15,4.0,41.0,Bottle/Cask,4,NONE
+W05,Southerly Reserve Cabernet 750ml,Southerly Estate,Wine,WET,1,0.75,0.145,16.5,1,From 2027,40,0.75,8.6,Bottle/Cask,4,NONE
+N01,Southerly Zero Lager 6x330ml Can,Southerly Brewing,No/Low,,6,0.33,0.004,9.8,6,Now,20,1.98,0.6,Multipack,5,NONE
+N02,Botanic Zero Gin Alternative 700ml,Southerly Spirits,No/Low,,1,0.7,0.0,19.5,1,From 2027,40,0.7,0.0,Bottle/Cask,5,NONE
+N03,Southerly Zero Sparkling 750ml,Southerly Estate,No/Low,,1,0.75,0.0,6.2,1,From 2027,15,0.75,0.0,Bottle/Cask,5,NONE
+K01,Southerly Lager 50L Keg,Southerly Brewing,Draught,Draught,1,50.0,0.046,160.0,0,,0,50.0,181.5,Keg,6,BEER_DRT_FULL
+K02,Coastline Pale Ale 50L Keg,Southerly Brewing,Draught,Draught,1,50.0,0.052,175.0,0,,0,50.0,205.1,Keg,6,BEER_DRT_FULL

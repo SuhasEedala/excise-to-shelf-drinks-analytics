@@ -1,0 +1,79 @@
+CustomerID,Customer,Banner,Channel,ChannelGroup,Suburb,Region,State,Latitude,Longitude,SizeTier
+C001,Bottle Bay Manly,Bottle Bay,National Chain,Off-premise,Manly,Northern Beaches,NSW,-33.79904278863321,151.288667624016,Medium
+C002,Bottle Bay Maitland,Bottle Bay,National Chain,Off-premise,Maitland,Hunter,NSW,-32.73428498346649,151.5559435993485,Medium
+C003,Bottle Bay Leichhardt,Bottle Bay,National Chain,Off-premise,Leichhardt,Inner West,NSW,-33.88190366780691,151.1582381978348,Large
+C004,Bottle Bay Sutherland,Bottle Bay,National Chain,Off-premise,Sutherland,Sutherland Shire,NSW,-34.02457505719739,151.0567807549508,Medium
+C005,Bottle Bay Newcastle,Bottle Bay,National Chain,Off-premise,Newcastle,Hunter,NSW,-32.92944131818474,151.7778479382677,Large
+C006,Bottle Bay Liverpool,Bottle Bay,National Chain,Off-premise,Liverpool,Western Sydney,NSW,-33.92034184237296,150.9204795305691,Large
+C007,Bottle Bay The Entrance,Bottle Bay,National Chain,Off-premise,The Entrance,Central Coast,NSW,-33.33704822163652,151.5002297625136,Large
+C008,Bottle Bay Balmain,Bottle Bay,National Chain,Off-premise,Balmain,Inner West,NSW,-33.86151358551108,151.1806294628049,Medium
+C009,Bottle Bay Surry Hills,Bottle Bay,National Chain,Off-premise,Surry Hills,Eastern Suburbs,NSW,-33.8853035160308,151.2113500574274,Medium
+C010,Bottle Bay Gosford,Bottle Bay,National Chain,Off-premise,Gosford,Central Coast,NSW,-33.42238571366615,151.3426707866463,Large
+C011,Bottle Bay Parramatta,Bottle Bay,National Chain,Off-premise,Parramatta,Western Sydney,NSW,-33.81479726279153,151.0018673581961,Large
+C012,Bottle Bay Penrith,Bottle Bay,National Chain,Off-premise,Penrith,Western Sydney,NSW,-33.75537146745957,150.6930409863509,Medium
+C013,Bottle Bay Chatswood,Bottle Bay,National Chain,Off-premise,Chatswood,North Shore,NSW,-33.79891663354473,151.1821745732463,Large
+C014,Bottle Bay Ryde,Bottle Bay,National Chain,Off-premise,Ryde,North Shore,NSW,-33.81759749334708,151.1069048350638,Large
+C015,Bottle Bay Newtown,Bottle Bay,National Chain,Off-premise,Newtown,Inner West,NSW,-33.89800465508996,151.1794882591953,Large
+C016,Bottle Bay Blacktown,Bottle Bay,National Chain,Off-premise,Blacktown,Western Sydney,NSW,-33.76886632026062,150.9083800417056,Large
+C017,Bottle Bay Castle Hill,Bottle Bay,National Chain,Off-premise,Castle Hill,Hills District,NSW,-33.730387055378,151.0065739276438,Large
+C018,Bottle Bay Strathfield,Bottle Bay,National Chain,Off-premise,Strathfield,Inner West,NSW,-33.87682705897001,151.090600138358,Large
+C019,Bottle Bay North Sydney,Bottle Bay,National Chain,Off-premise,North Sydney,North Shore,NSW,-33.83750851776784,151.2074272772082,Large
+C020,Bottle Bay Cronulla,Bottle Bay,National Chain,Off-premise,Cronulla,Sutherland Shire,NSW,-34.05928175793901,151.1524756190732,Medium
+C021,CellarMax Orange,CellarMax,National Chain,Off-premise,Orange,Central West,NSW,-33.28423915463271,149.0949379966981,Large
+C022,CellarMax Bathurst,CellarMax,National Chain,Off-premise,Bathurst,Central West,NSW,-33.42296809883706,149.5740082595172,Large
+C023,CellarMax Manly,CellarMax,National Chain,Off-premise,Manly,Northern Beaches,NSW,-33.79971643716608,151.2838655123379,Medium
+C024,CellarMax Strathfield,CellarMax,National Chain,Off-premise,Strathfield,Inner West,NSW,-33.87406879191318,151.0962125467054,Medium
+C025,CellarMax Chatswood,CellarMax,National Chain,Off-premise,Chatswood,North Shore,NSW,-33.7976163126736,151.1801499338353,Large
+C026,CellarMax Randwick,CellarMax,National Chain,Off-premise,Randwick,Eastern Suburbs,NSW,-33.91147907558763,151.2358180387304,Medium
+C027,CellarMax Bondi,CellarMax,National Chain,Off-premise,Bondi,Eastern Suburbs,NSW,-33.890286793193,151.2722175501329,Large
+C028,CellarMax Marrickville,CellarMax,National Chain,Off-premise,Marrickville,Inner West,NSW,-33.91078361147686,151.1534115218728,Medium
+C029,CellarMax Leichhardt,CellarMax,National Chain,Off-premise,Leichhardt,Inner West,NSW,-33.88293444356344,151.161805336674,Large
+C030,CellarMax Cronulla,CellarMax,National Chain,Off-premise,Cronulla,Sutherland Shire,NSW,-34.06107049247787,151.1525378269048,Medium
+C031,CellarMax Newtown,CellarMax,National Chain,Off-premise,Newtown,Inner West,NSW,-33.89292243727428,151.1815053337377,Large
+C032,CellarMax Penrith,CellarMax,National Chain,Off-premise,Penrith,Western Sydney,NSW,-33.74661009132634,150.690433710837,Large
+C033,CellarMax Maitland,CellarMax,National Chain,Off-premise,Maitland,Hunter,NSW,-32.73577972782422,151.5558305705905,Large
+C034,CellarMax Sutherland,CellarMax,National Chain,Off-premise,Sutherland,Sutherland Shire,NSW,-34.02909454715955,151.0573333319087,Large
+C035,CellarMax Drummoyne,CellarMax,National Chain,Off-premise,Drummoyne,Inner West,NSW,-33.85504673724362,151.1549405415423,Medium
+C036,Harbourside Cellars,Independent,Independent Bottle Shop,Off-premise,Newtown,Inner West,NSW,-33.88825841260198,151.1802432282998,Small
+C037,The Corner Grog,Independent,Independent Bottle Shop,Off-premise,Newtown,Inner West,NSW,-33.90339613884219,151.179803134387,Small
+C038,Paddle & Pour,Independent,Independent Bottle Shop,Off-premise,Orange,Central West,NSW,-33.28583629039718,149.0995776273408,Small
+C039,Local Liquor Co-op,Independent,Independent Bottle Shop,Off-premise,Surry Hills,Eastern Suburbs,NSW,-33.88552885429767,151.2105240954889,Small
+C040,Wattle Wine Store,Independent,Independent Bottle Shop,Off-premise,Randwick,Eastern Suburbs,NSW,-33.91545892372722,151.2408386523475,Medium
+C041,Seaside Liquor,Independent,Independent Bottle Shop,Off-premise,Parramatta,Western Sydney,NSW,-33.81460917643558,151.0039482185331,Small
+C042,Old Mill Liquor,Independent,Independent Bottle Shop,Off-premise,Penrith,Western Sydney,NSW,-33.7538953502867,150.6918243218064,Medium
+C043,Gully Cellars,Independent,Independent Bottle Shop,Off-premise,The Entrance,Central Coast,NSW,-33.34146416003767,151.5005154676112,Medium
+C044,Two Bays Liquor,Independent,Independent Bottle Shop,Off-premise,Orange,Central West,NSW,-33.28284514710168,149.099530086307,Small
+C045,Fig Tree Drinks,Independent,Independent Bottle Shop,Off-premise,Surry Hills,Eastern Suburbs,NSW,-33.88796436308629,151.2123382166045,Medium
+C046,Lantern Lane Liquor,Independent,Independent Bottle Shop,Off-premise,Ryde,North Shore,NSW,-33.81883381272296,151.1045177637532,Small
+C047,Ridgeway Cellars,Independent,Independent Bottle Shop,Off-premise,Balmain,Inner West,NSW,-33.85752002515927,151.1786440850217,Small
+C048,Sandstone Liquor,Independent,Independent Bottle Shop,Off-premise,Leichhardt,Inner West,NSW,-33.88234185249591,151.1557672183075,Medium
+C049,Bluegum Bottleshop,Independent,Independent Bottle Shop,Off-premise,Ryde,North Shore,NSW,-33.81371373068461,151.108607267976,Medium
+C050,Kingfisher Cellars,Independent,Independent Bottle Shop,Off-premise,Manly,Northern Beaches,NSW,-33.80110447759773,151.2899527837967,Small
+C051,Railway Parade Liquor,Independent,Independent Bottle Shop,Off-premise,Bondi,Eastern Suburbs,NSW,-33.89153855763985,151.2728504380366,Small
+C052,Silver Gull Wines,Independent,Independent Bottle Shop,Off-premise,Sydney CBD,Sydney CBD,NSW,-33.86378385452457,151.2063158189431,Small
+C053,Hilltop Grog,Independent,Independent Bottle Shop,Off-premise,Blacktown,Western Sydney,NSW,-33.77218381536858,150.9059846343999,Small
+C054,Banksia Bottles,Independent,Independent Bottle Shop,Off-premise,Chatswood,North Shore,NSW,-33.79277755441606,151.1832717547207,Medium
+C055,Ferry Wharf Cellars,Independent,Independent Bottle Shop,Off-premise,Stanmore,Inner West,NSW,-33.90015051630309,151.1638538447942,Small
+C056,The Southerly Arms,Independent venue,Pub & Hotel,On-premise,The Entrance,Central Coast,NSW,-33.34163445710079,151.4969976296779,Medium
+C057,Jacaranda Hotel,Independent venue,Pub & Hotel,On-premise,Castle Hill,Hills District,NSW,-33.73297917815322,151.0040918944778,Medium
+C058,The Tidewater Inn,Independent venue,Pub & Hotel,On-premise,Chatswood,North Shore,NSW,-33.7984525083,151.1820169807169,Medium
+C059,Ironbark Hotel,Independent venue,Pub & Hotel,On-premise,Leichhardt,Inner West,NSW,-33.88138565368899,151.1610121943223,Medium
+C060,The Lamplighter,Independent venue,Pub & Hotel,On-premise,Ryde,North Shore,NSW,-33.81567157645064,151.1047274903738,Medium
+C061,Wharfside Hotel,Independent venue,Pub & Hotel,On-premise,Randwick,Eastern Suburbs,NSW,-33.9172531642167,151.2412714693449,Medium
+C062,The Copper Kettle,Independent venue,Pub & Hotel,On-premise,Sutherland,Sutherland Shire,NSW,-34.02536946616615,151.0554402699483,Medium
+C063,Northshore Tavern,Independent venue,Pub & Hotel,On-premise,Dee Why,Northern Beaches,NSW,-33.75539032600551,151.2842278789581,Medium
+C064,The Pelican Hotel,Independent venue,Pub & Hotel,On-premise,Maitland,Hunter,NSW,-32.73518725151322,151.5550375606798,Large
+C065,Stockman's Rest Hotel,Independent venue,Pub & Hotel,On-premise,Drummoyne,Inner West,NSW,-33.85248799776163,151.1508127567644,Large
+C066,Harbour Leagues Club,Club,Club,On-premise,The Entrance,Central Coast,NSW,-33.34058831828209,151.4953694176655,Medium
+C067,Bayview Bowls Club,Club,Club,On-premise,Wollongong,Illawarra,NSW,-34.43027318517407,150.8885988642638,Medium
+C068,Westside RSL,Club,Club,On-premise,Ryde,North Shore,NSW,-33.81829035673536,151.109510740585,Large
+C069,Parklands Sports Club,Club,Club,On-premise,Strathfield,Inner West,NSW,-33.87651469988647,151.0928952531296,Large
+C070,Valley Workers Club,Club,Club,On-premise,Sydney CBD,Sydney CBD,NSW,-33.87096057123529,151.2082641664622,Medium
+C071,Saltbush Dining,Independent venue,Restaurant & Bar,On-premise,Stanmore,Inner West,NSW,-33.89166798727182,151.1653042982234,Small
+C072,Laneway Bar & Kitchen,Independent venue,Restaurant & Bar,On-premise,Stanmore,Inner West,NSW,-33.89440146889355,151.1598753125749,Small
+C073,Olive & Ember,Independent venue,Restaurant & Bar,On-premise,Bondi,Eastern Suburbs,NSW,-33.89171452123193,151.27320083753,Small
+C074,The Rooftop Room,Independent venue,Restaurant & Bar,On-premise,Breakfast Point,Inner West,NSW,-33.84466598165646,151.1114146155676,Small
+C075,Mezze House,Independent venue,Restaurant & Bar,On-premise,Breakfast Point,Inner West,NSW,-33.83996185254654,151.110466287983,Small
+C076,SipDirect Online,SipDirect,Online,Online,Sydney CBD,Sydney CBD,NSW,-33.8669447307748,151.2091594660427,Large
+C077,Doorstep Drinks Online,Doorstep Drinks,Online,Online,Parramatta,Western Sydney,NSW,-33.81499974682072,150.9988353258994,Large
+C078,Cellar2Door Online,Cellar2Door,Online,Online,North Sydney,North Shore,NSW,-33.83805051721498,151.2067081402047,Large
