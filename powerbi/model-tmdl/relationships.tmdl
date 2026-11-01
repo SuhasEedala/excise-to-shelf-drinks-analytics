@@ -1,0 +1,17 @@
+relationship Fact_Product
+	fromColumn: FactSales.SKU
+	toColumn: DimProduct.SKU
+
+relationship Fact_Customer
+	fromColumn: FactSales.CustomerID
+	toColumn: DimCustomer.CustomerID
+
+relationship Fact_Date
+	fromColumn: FactSales.MonthStart
+	toColumn: DimDate.Date
+
+relationship 43e4177b-e34d-4e1b-bb66-76d124b215b1
+	joinOnDateBehavior: datePartOnly
+	fromColumn: DimExciseRates.EffectiveDate
+	toColumn: LocalDateTable_88954c93-d034-4563-9d2a-d3c89dd4cdb1.Date
+

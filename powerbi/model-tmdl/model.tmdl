@@ -1,0 +1,27 @@
+model Model
+	culture: en-AU
+	defaultPowerBIDataSourceVersion: powerBI_V3
+	sourceQueryCulture: en-AU
+	valueFilterBehavior: independent
+	dataAccessOptions
+		legacyRedirects
+		returnErrorValuesAsNull
+
+annotation __PBI_TimeIntelligenceEnabled = 1
+
+annotation PBI_ProTooling = ["TMDLView_Desktop","DevMode"]
+
+annotation PBI_QueryOrder = ["FactSales","DimProduct","DimCustomer","DimDate","DimExciseRates"]
+
+ref table FactSales
+ref table DimProduct
+ref table DimCustomer
+ref table DimDate
+ref table DimExciseRates
+ref table DateTableTemplate_2e41c1e5-aac6-48a8-957c-ba9abfd98eef
+ref table LocalDateTable_88954c93-d034-4563-9d2a-d3c89dd4cdb1
+ref table 'GTN Step'
+ref table 'PVM Step'
+
+ref cultureInfo en-AU
+
