@@ -1,0 +1,25 @@
+EffectiveDate,IndexFactor,Source,TaxCode,RatePerLAL,TaxClass,Basis
+2024-02-05,1.018,ABF ACN 2024/02,BEER_PKG_FULL,60.12,Packaged beer >3%,Published ABF/ATO rate
+2024-08-05,1.02,ABF ACN 2024/29,BEER_PKG_FULL,61.32,Packaged beer >3%,Published ABF/ATO rate
+2025-02-03,1.004,ABF ACN 2025/02,BEER_PKG_FULL,61.57,Packaged beer >3%,Published ABF/ATO rate
+2025-08-04,1.016,ABF ACN 2025/19 - draught frozen,BEER_PKG_FULL,62.56,Packaged beer >3%,Published ABF/ATO rate
+2026-02-02,1.019,ABF ACN 2026/04,BEER_PKG_FULL,63.75,Packaged beer >3%,Published ABF/ATO rate
+2026-08-03,1.02,ABF ACN 2026/30,BEER_PKG_FULL,65.03,Packaged beer >3%,Published ABF/ATO rate
+2024-02-05,1.018,ABF ACN 2024/02,BEER_DRT_FULL,42.37,Draught beer >3.5%,Published ABF/ATO rate
+2024-08-05,1.02,ABF ACN 2024/29,BEER_DRT_FULL,43.22,Draught beer >3.5%,Published ABF/ATO rate
+2025-02-03,1.004,ABF ACN 2025/02,BEER_DRT_FULL,43.39,Draught beer >3.5%,Published ABF/ATO rate
+2025-08-04,1.016,ABF ACN 2025/19 - draught frozen,BEER_DRT_FULL,43.39,Draught beer >3.5%,Published ABF/ATO rate
+2026-02-02,1.019,ABF ACN 2026/04,BEER_DRT_FULL,43.39,Draught beer >3.5%,Published ABF/ATO rate
+2026-08-03,1.02,ABF ACN 2026/30,BEER_DRT_FULL,43.39,Draught beer >3.5%,Published ABF/ATO rate
+2024-02-05,1.018,ABF ACN 2024/02,SPIRITS,101.85,Spirits & RTDs,Published ABF/ATO rate
+2024-08-05,1.02,ABF ACN 2024/29,SPIRITS,103.89,Spirits & RTDs,Published ABF/ATO rate
+2025-02-03,1.004,ABF ACN 2025/02,SPIRITS,104.31,Spirits & RTDs,Published ABF/ATO rate
+2025-08-04,1.016,ABF ACN 2025/19 - draught frozen,SPIRITS,105.98,Spirits & RTDs,Published ABF/ATO rate
+2026-02-02,1.019,ABF ACN 2026/04,SPIRITS,107.99,Spirits & RTDs,Published ABF/ATO rate
+2026-08-03,1.02,ABF ACN 2026/30,SPIRITS,110.15,Spirits & RTDs,Published ABF/ATO rate
+2024-02-05,1.018,ABF ACN 2024/02,BRANDY,95.12,Brandy,Published ABF/ATO rate
+2024-08-05,1.02,ABF ACN 2024/29,BRANDY,97.02,Brandy,Published ABF/ATO rate
+2025-02-03,1.004,ABF ACN 2025/02,BRANDY,97.41,Brandy,Published ABF/ATO rate
+2025-08-04,1.016,ABF ACN 2025/19 - draught frozen,BRANDY,98.97,Brandy,Published ABF/ATO rate
+2026-02-02,1.019,ABF ACN 2026/04,BRANDY,100.85,Brandy,Published ABF/ATO rate
+2026-08-03,1.02,ABF ACN 2026/30,BRANDY,102.87,Brandy,Published ABF/ATO rate
