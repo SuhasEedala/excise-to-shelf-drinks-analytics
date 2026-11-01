@@ -1,0 +1,117 @@
+table DimProduct
+	lineageTag: a3164e5c-cf67-4a5f-a4b5-52b07142fcb3
+
+	column SKU
+		dataType: string
+		lineageTag: 23744aaf-9aab-4a46-9ee8-1e2ff824ce79
+		summarizeBy: none
+		sourceColumn: SKU
+
+	column Product
+		dataType: string
+		lineageTag: d396c8ad-bfef-4709-b688-af8e5d838cbc
+		summarizeBy: none
+		sourceColumn: Product
+
+	column Brand
+		dataType: string
+		lineageTag: 2821339f-545e-41f9-9c8a-36a7fc43737f
+		summarizeBy: none
+		sourceColumn: Brand
+
+	column Category
+		dataType: string
+		lineageTag: 0ee750c7-6500-4c39-abce-fcdea03da975
+		summarizeBy: none
+		sourceColumn: Category
+		sortByColumn: CategoryOrder
+
+	column TaxBase
+		dataType: string
+		lineageTag: 2d3fdc6f-c8c8-4867-a8fa-57b073d11971
+		summarizeBy: none
+		sourceColumn: TaxBase
+
+	column UnitsPerPack
+		dataType: int64
+		formatString: 0
+		lineageTag: b3f35602-478e-4c1a-9acc-ec72648da317
+		summarizeBy: none
+		sourceColumn: UnitsPerPack
+
+	column LitresPerUnit
+		dataType: double
+		lineageTag: bde9188c-4cf2-45a9-92a6-d7b84c21fdcd
+		summarizeBy: none
+		sourceColumn: LitresPerUnit
+
+	column ABV
+		dataType: double
+		formatString: 0.0%
+		lineageTag: fe6f6940-6824-4b70-a53a-599d21b33072
+		summarizeBy: none
+		sourceColumn: ABV
+
+	column ProducerPriceAug26
+		dataType: double
+		formatString: \$#,0.00
+		lineageTag: 741332e8-4dab-4d3b-8b69-7f23283deddd
+		summarizeBy: none
+		sourceColumn: ProducerPriceAug26
+
+	column DepositContainers
+		dataType: int64
+		formatString: 0
+		lineageTag: b184e7c8-405c-4ff9-b72d-17ef9ffd47cc
+		summarizeBy: none
+		sourceColumn: DepositContainers
+
+	column DepositStarts
+		dataType: string
+		lineageTag: 820026cc-d651-44f5-8a98-4d4a98dc32e1
+		summarizeBy: none
+		sourceColumn: DepositStarts
+
+	column PricePoint
+		dataType: int64
+		formatString: \$#,0
+		lineageTag: 3bd2e7a0-8689-467e-ab4e-ecb526281181
+		summarizeBy: none
+		sourceColumn: PricePoint
+
+	column LitresPerPack
+		dataType: double
+		lineageTag: fc72fec2-d784-494e-ba1d-08be5119510d
+		summarizeBy: none
+		sourceColumn: LitresPerPack
+
+	column StdDrinksPerPack
+		dataType: double
+		lineageTag: 0651ac2d-2a7d-478f-a175-68a0c16bfe0a
+		summarizeBy: none
+		sourceColumn: StdDrinksPerPack
+
+	column PackType
+		dataType: string
+		lineageTag: 88a9ba86-fa9a-4e8f-9d8b-be5f67f41971
+		summarizeBy: none
+		sourceColumn: PackType
+
+	column CategoryOrder
+		dataType: int64
+		isHidden
+		formatString: 0
+		lineageTag: a11506d1-4a65-4aab-8195-6b8ccfd2b10d
+		summarizeBy: none
+		sourceColumn: CategoryOrder
+
+	column TaxCode
+		dataType: string
+		lineageTag: 9d1a4277-0276-4a51-aa67-fa3ddd548391
+		summarizeBy: none
+		sourceColumn: TaxCode
+
+	partition DimProduct = m
+		mode: import
+		source = let Source = Csv.Document(File.Contents("C:\Users\AB Tech\Desktop\Project - 1\Power BI\Data\DimProduct.csv"), [Delimiter = ",", Encoding = 65001, QuoteStyle = QuoteStyle.Csv]), Promoted = Table.PromoteHeaders(Source, [PromoteAllScalars = true]), Typed = Table.TransformColumnTypes(Promoted, {{"SKU", type text}, {"Product", type text}, {"Brand", type text}, {"Category", type text}, {"TaxBase", type text}, {"UnitsPerPack", Int64.Type}, {"LitresPerUnit", type number}, {"ABV", type number}, {"ProducerPriceAug26", type number}, {"DepositContainers", Int64.Type}, {"DepositStarts", type text}, {"PricePoint", Int64.Type}, {"LitresPerPack", type number}, {"StdDrinksPerPack", type number}, {"PackType", type text}, {"CategoryOrder", Int64.Type}, {"TaxCode", type text}}, "en-US") in Typed
+

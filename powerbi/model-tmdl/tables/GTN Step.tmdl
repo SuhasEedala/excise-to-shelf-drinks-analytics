@@ -1,0 +1,34 @@
+table 'GTN Step'
+	lineageTag: 03779745-cb04-4246-be2d-9fd852e6d966
+
+	measure 'GTN Value' =
+			SWITCH ( SELECTEDVALUE ( 'GTN Step'[Step] ),
+			    "Gross Sales", [Gross Sales],
+			    "Promo Discount", - [Promo Discount],
+			    "Rebates", - [Rebates],
+			    "Excise", - [Excise],
+			    "Deposit Levy", - [Deposit Levy],
+			    "WET", - [WET],
+			    "COGS", - [COGS]
+			)
+		formatString: \$#,0;(\$#,0);\$#,0
+		lineageTag: 440777a7-750f-457b-a6fc-9929cb7cb288
+
+	column Step
+		dataType: string
+		lineageTag: 488327a4-d440-49c6-8413-89ef181de64d
+		summarizeBy: none
+		sourceColumn: [Step]
+		sortByColumn: Ord
+
+	column Ord
+		dataType: int64
+		isHidden
+		lineageTag: 3fba4250-42eb-427b-8a2f-356898a7917b
+		summarizeBy: none
+		sourceColumn: [Ord]
+
+	partition 'GTN Step' = calculated
+		mode: import
+		source = DATATABLE ( "Step", STRING, "Ord", INTEGER, { { "Gross Sales", 1 }, { "Promo Discount", 2 }, { "Rebates", 3 }, { "Excise", 4 }, { "Deposit Levy", 5 }, { "WET", 6 }, { "COGS", 7 } } )
+

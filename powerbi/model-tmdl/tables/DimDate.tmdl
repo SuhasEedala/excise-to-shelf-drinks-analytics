@@ -1,0 +1,119 @@
+table DimDate
+	lineageTag: 9c018d78-31a5-41e9-93f8-b132fbd89c2f
+	dataCategory: Time
+
+	column Date
+		dataType: dateTime
+		isKey
+		formatString: dd/mm/yyyy
+		lineageTag: f6de2968-cbc3-4d13-9659-8897244824f3
+		summarizeBy: none
+		sourceColumn: Date
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	column Year
+		dataType: int64
+		formatString: 0
+		lineageTag: 05127fc9-6a32-4548-ae40-22f5b271e306
+		summarizeBy: none
+		sourceColumn: Year
+
+	column MonthNo
+		dataType: int64
+		formatString: 0
+		lineageTag: b7286e6c-41fe-4b67-a8f3-ea9e01ac88e2
+		summarizeBy: none
+		sourceColumn: MonthNo
+
+	column Month
+		dataType: string
+		lineageTag: 1e19a91c-8ec8-44af-bf94-0deb6c83cf31
+		summarizeBy: none
+		sourceColumn: Month
+		sortByColumn: MonthNo
+
+	column MonthYear
+		dataType: string
+		lineageTag: 2605a659-3fde-42f8-a514-deea41c015b6
+		summarizeBy: none
+		sourceColumn: MonthYear
+		sortByColumn: YearMonthKey
+
+	column MonthStart
+		dataType: dateTime
+		formatString: mmm yyyy
+		lineageTag: df79fad3-ba8d-4ee6-a45e-788b762bc97a
+		summarizeBy: none
+		sourceColumn: MonthStart
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	column YearMonthKey
+		dataType: int64
+		isHidden
+		formatString: 0
+		lineageTag: 464e5c43-25d9-4d09-b763-2543814150b6
+		summarizeBy: none
+		sourceColumn: YearMonthKey
+
+	column FY
+		dataType: string
+		lineageTag: ca0181e2-201c-4476-bb2c-48a7ebbaaccc
+		summarizeBy: none
+		sourceColumn: FY
+		sortByColumn: FYNo
+
+	column FYNo
+		dataType: int64
+		isHidden
+		formatString: 0
+		lineageTag: 27305ff5-f2e6-43b1-8151-b7ac62614537
+		summarizeBy: none
+		sourceColumn: FYNo
+
+	column FYMonthNo
+		dataType: int64
+		formatString: 0
+		lineageTag: f764c6e5-1f7f-4989-841a-6ad03f7892dc
+		summarizeBy: none
+		sourceColumn: FYMonthNo
+
+	column FYQuarter
+		dataType: string
+		lineageTag: 45a2741e-2947-485f-a3a0-b00c5b2e4b51
+		summarizeBy: none
+		sourceColumn: FYQuarter
+
+	column WeekCommencing
+		dataType: dateTime
+		formatString: dd/mm/yyyy
+		lineageTag: 928153f2-eb32-4de3-884d-8f9a0e07fa98
+		summarizeBy: none
+		sourceColumn: WeekCommencing
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	column ExcisePeriod
+		dataType: string
+		lineageTag: ecf0192f-8e0e-47ab-9685-b102b27e6e9e
+		summarizeBy: none
+		sourceColumn: ExcisePeriod
+
+	column ExciseIncreaseDay
+		dataType: int64
+		formatString: 0
+		lineageTag: c5a70af0-da09-461e-8ca7-fe7425733a13
+		summarizeBy: none
+		sourceColumn: ExciseIncreaseDay
+
+	column Season
+		dataType: string
+		lineageTag: d5d7f292-3b58-493d-a84a-2347f497efc4
+		summarizeBy: none
+		sourceColumn: Season
+
+	partition DimDate = m
+		mode: import
+		source = let Source = Csv.Document(File.Contents("C:\Users\AB Tech\Desktop\Project - 1\Power BI\Data\DimDate.csv"), [Delimiter = ",", Encoding = 65001, QuoteStyle = QuoteStyle.Csv]), Promoted = Table.PromoteHeaders(Source, [PromoteAllScalars = true]), Typed = Table.TransformColumnTypes(Promoted, {{"Date", type date}, {"Year", Int64.Type}, {"MonthNo", Int64.Type}, {"Month", type text}, {"MonthYear", type text}, {"MonthStart", type date}, {"YearMonthKey", Int64.Type}, {"FY", type text}, {"FYNo", Int64.Type}, {"FYMonthNo", Int64.Type}, {"FYQuarter", type text}, {"WeekCommencing", type date}, {"ExcisePeriod", type text}, {"ExciseIncreaseDay", Int64.Type}, {"Season", type text}}, "en-US") in Typed
+

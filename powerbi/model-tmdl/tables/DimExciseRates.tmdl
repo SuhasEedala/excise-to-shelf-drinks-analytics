@@ -1,0 +1,66 @@
+table DimExciseRates
+	lineageTag: 9bdeca4a-9984-47e7-9e72-613e4aa552bc
+
+	measure 'Excise Rate per LAL' = AVERAGE ( DimExciseRates[RatePerLAL] )
+		formatString: \$#,0.00
+		lineageTag: 7c0b8a52-2f5e-4c1e-9d6a-1a2b3c4d5e6f
+
+	column EffectiveDate
+		dataType: dateTime
+		formatString: dd/mm/yyyy
+		lineageTag: 1b125e25-4161-4838-8c2b-5f0c857eb452
+		summarizeBy: none
+		sourceColumn: EffectiveDate
+
+		variation Variation
+			isDefault
+			relationship: 43e4177b-e34d-4e1b-bb66-76d124b215b1
+			defaultHierarchy: LocalDateTable_88954c93-d034-4563-9d2a-d3c89dd4cdb1.'Date Hierarchy'
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	column IndexFactor
+		dataType: double
+		lineageTag: de489b79-317f-4261-a19e-36280c584531
+		summarizeBy: sum
+		sourceColumn: IndexFactor
+
+		annotation SummarizationSetBy = Automatic
+
+	column Source
+		dataType: string
+		lineageTag: 59cfec60-efe2-4c34-b314-6a4571e526c4
+		summarizeBy: none
+		sourceColumn: Source
+
+	column TaxCode
+		dataType: string
+		lineageTag: 89b8a178-51de-491b-9928-7ea3494de3ef
+		summarizeBy: none
+		sourceColumn: TaxCode
+
+	column RatePerLAL
+		dataType: double
+		formatString: \$#,0.00
+		lineageTag: 576923ae-95d4-4e83-927f-6eb27d296e60
+		summarizeBy: sum
+		sourceColumn: RatePerLAL
+
+		annotation SummarizationSetBy = Automatic
+
+	column TaxClass
+		dataType: string
+		lineageTag: fb628353-2d13-48be-8c1b-0cfb08f7294a
+		summarizeBy: none
+		sourceColumn: TaxClass
+
+	column Basis
+		dataType: string
+		lineageTag: e3baf8a6-bcba-4c97-af80-77975d65c16e
+		summarizeBy: none
+		sourceColumn: Basis
+
+	partition DimExciseRates = m
+		mode: import
+		source = let Source = Csv.Document(File.Contents("C:\Users\AB Tech\Desktop\Project - 1\Power BI\Data\DimExciseRates.csv"), [Delimiter = ",", Encoding = 65001, QuoteStyle = QuoteStyle.Csv]), Promoted = Table.PromoteHeaders(Source, [PromoteAllScalars = true]), Typed = Table.TransformColumnTypes(Promoted, {{"EffectiveDate", type date}, {"IndexFactor", type number}, {"Source", type text}, {"TaxCode", type text}, {"RatePerLAL", type number}, {"TaxClass", type text}, {"Basis", type text}}, "en-US") in Typed
+

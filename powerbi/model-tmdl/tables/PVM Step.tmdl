@@ -1,0 +1,30 @@
+table 'PVM Step'
+	lineageTag: ee81e25c-e2c6-4828-9279-3e0e96de0621
+
+	measure 'PVM Value' =
+			SWITCH ( SELECTEDVALUE ( 'PVM Step'[Step] ),
+			    "Volume", [PVM Volume Effect],
+			    "Price", [PVM Price Effect],
+			    "Mix", [PVM Mix Effect]
+			)
+		formatString: \$#,0;(\$#,0);\$#,0
+		lineageTag: e9ea7cea-5a88-4759-bcbf-f18c2715e7c8
+
+	column Step
+		dataType: string
+		lineageTag: 91c8de20-b455-434c-b0d0-277fd5714c28
+		summarizeBy: none
+		sourceColumn: [Step]
+		sortByColumn: Ord
+
+	column Ord
+		dataType: int64
+		isHidden
+		lineageTag: a2fd0a7a-62c3-4035-8510-7c1a5e7b8bb4
+		summarizeBy: none
+		sourceColumn: [Ord]
+
+	partition 'PVM Step' = calculated
+		mode: import
+		source = DATATABLE ( "Step", STRING, "Ord", INTEGER, { { "Volume", 1 }, { "Price", 2 }, { "Mix", 3 } } )
+

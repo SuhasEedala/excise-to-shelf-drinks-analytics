@@ -1,0 +1,77 @@
+table DimCustomer
+	lineageTag: 1d2350d7-8849-4451-b7e4-e2434d623fac
+
+	column CustomerID
+		dataType: string
+		lineageTag: e9a8224f-fe76-431b-bd87-a5f74613801f
+		summarizeBy: none
+		sourceColumn: CustomerID
+
+	column Customer
+		dataType: string
+		lineageTag: 52820ae1-f98e-4ce4-802a-da50117fd3e8
+		summarizeBy: none
+		sourceColumn: Customer
+
+	column Banner
+		dataType: string
+		lineageTag: 413d919a-9747-49a4-8840-f2f7cbaefaa8
+		summarizeBy: none
+		sourceColumn: Banner
+
+	column Channel
+		dataType: string
+		lineageTag: dd9611ee-0a0a-4177-b7bb-8169cad5a3cd
+		summarizeBy: none
+		sourceColumn: Channel
+
+	column ChannelGroup
+		dataType: string
+		lineageTag: 2ddc60d4-88b3-43f3-a464-38139c80e358
+		summarizeBy: none
+		sourceColumn: ChannelGroup
+
+	column Suburb
+		dataType: string
+		lineageTag: 6f84840e-bd38-4cc9-94bd-74f31e858ebf
+		dataCategory: City
+		summarizeBy: none
+		sourceColumn: Suburb
+
+	column Region
+		dataType: string
+		lineageTag: 0e83b728-37c2-4b41-a4b1-8ad5203901ed
+		summarizeBy: none
+		sourceColumn: Region
+
+	column State
+		dataType: string
+		lineageTag: 19b61534-88a4-4573-b634-cdaac9de910c
+		dataCategory: StateOrProvince
+		summarizeBy: none
+		sourceColumn: State
+
+	column Latitude
+		dataType: double
+		lineageTag: f7da3005-251d-4c32-a679-789943e81fa8
+		dataCategory: Latitude
+		summarizeBy: none
+		sourceColumn: Latitude
+
+	column Longitude
+		dataType: double
+		lineageTag: 64ae3d2d-68a5-4a97-974d-73fb593a959d
+		dataCategory: Longitude
+		summarizeBy: none
+		sourceColumn: Longitude
+
+	column SizeTier
+		dataType: string
+		lineageTag: fe6b1a27-f1e3-4dbb-9341-da93d14e677f
+		summarizeBy: none
+		sourceColumn: SizeTier
+
+	partition DimCustomer = m
+		mode: import
+		source = let Source = Csv.Document(File.Contents("C:\Users\AB Tech\Desktop\Project - 1\Power BI\Data\DimCustomer.csv"), [Delimiter = ",", Encoding = 65001, QuoteStyle = QuoteStyle.Csv]), Promoted = Table.PromoteHeaders(Source, [PromoteAllScalars = true]), Typed = Table.TransformColumnTypes(Promoted, {{"CustomerID", type text}, {"Customer", type text}, {"Banner", type text}, {"Channel", type text}, {"ChannelGroup", type text}, {"Suburb", type text}, {"Region", type text}, {"State", type text}, {"Latitude", type number}, {"Longitude", type number}, {"SizeTier", type text}}, "en-US") in Typed
+

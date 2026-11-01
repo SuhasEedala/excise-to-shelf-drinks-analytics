@@ -1,0 +1,414 @@
+table FactSales
+	lineageTag: b7dc87fa-8a4b-47b4-b73c-df4c6ca8022b
+
+	measure Packs = SUM ( FactSales[PacksQty] )
+		formatString: #,0
+		displayFolder: 1 Volume
+		lineageTag: 48ffe683-e25d-4189-a443-0eb05d1aa912
+
+	measure 'Packs PY' = CALCULATE ( [Packs], SAMEPERIODLASTYEAR ( DimDate[Date] ) )
+		formatString: #,0
+		displayFolder: 1 Volume
+		lineageTag: d8de6173-b8a6-41fe-bea9-69f4071b643b
+
+	measure 'Packs YoY %' = IF ( [Packs PY] > 0, DIVIDE ( [Packs] - [Packs PY], [Packs PY] ) )
+		formatString: 0.0%;-0.0%;0.0%
+		displayFolder: 1 Volume
+		lineageTag: c7719fb4-b599-4c32-b4bc-55341a8c546f
+
+	measure 'Litres of Alcohol' = SUM ( FactSales[LitresAlcohol] )
+		formatString: #,0
+		displayFolder: 1 Volume
+		lineageTag: 6d9cb14f-b898-4a72-b0bc-355e26d16daa
+
+	measure 'Gross Sales' = SUM ( FactSales[GrossSales] )
+		formatString: \$#,0;(\$#,0);\$#,0
+		displayFolder: 2 Gross to Net
+		lineageTag: dba05f58-0d8b-4fdf-84a7-da958d36608b
+
+	measure 'Promo Discount' = SUM ( FactSales[PromoDiscount] )
+		formatString: \$#,0;(\$#,0);\$#,0
+		displayFolder: 2 Gross to Net
+		lineageTag: defe619a-45ba-4213-b9c1-193bb29aceb4
+
+	measure Rebates = SUM ( FactSales[RebatesAmt] )
+		formatString: \$#,0;(\$#,0);\$#,0
+		displayFolder: 2 Gross to Net
+		lineageTag: 70e694a5-f01b-4831-8642-573c499d27ff
+
+	measure 'Trade Spend' = [Promo Discount] + [Rebates]
+		formatString: \$#,0;(\$#,0);\$#,0
+		displayFolder: 2 Gross to Net
+		lineageTag: 87fae425-c63b-4a86-b8de-8f9ada13f6dc
+
+	measure 'Trade Spend %' = DIVIDE ( [Trade Spend], [Gross Sales] )
+		formatString: 0.0%
+		displayFolder: 2 Gross to Net
+		lineageTag: 1eda3b86-a00f-4fd3-a9c0-35eb2de6eaf3
+
+	measure 'Net Sales' = SUM ( FactSales[NetSales] )
+		formatString: \$#,0;(\$#,0);\$#,0
+		displayFolder: 2 Gross to Net
+		lineageTag: 4a1e5b5c-01e4-4b14-a3c1-e2736bba5a8c
+
+	measure Excise = SUM ( FactSales[ExciseAmt] )
+		formatString: \$#,0;(\$#,0);\$#,0
+		displayFolder: 3 Tax
+		lineageTag: 4faa992f-027f-4766-b9a3-a49899fede70
+
+	measure 'Deposit Levy' = SUM ( FactSales[DepositLevy] )
+		formatString: \$#,0;(\$#,0);\$#,0
+		displayFolder: 3 Tax
+		lineageTag: b30adaff-297d-4172-8685-10e8869d6544
+
+	measure WET = SUM ( FactSales[WETAmt] )
+		formatString: \$#,0;(\$#,0);\$#,0
+		displayFolder: 3 Tax
+		lineageTag: 32456183-5450-4e92-985c-5a3059839bbd
+
+	measure 'Taxes & Levies' = [Excise] + [Deposit Levy] + [WET]
+		formatString: \$#,0;(\$#,0);\$#,0
+		displayFolder: 3 Tax
+		lineageTag: 55fe4990-ecf0-4a34-869a-33c7dde3d641
+
+	measure 'Tax % of Net Sales' = DIVIDE ( [Taxes & Levies], [Net Sales] )
+		formatString: 0.0%
+		displayFolder: 3 Tax
+		lineageTag: d1910f70-b506-43eb-b18d-1d9021a9546a
+
+	measure 'Excise per LAL' = DIVIDE ( [Excise], CALCULATE ( [Litres of Alcohol], DimProduct[TaxCode] <> "NONE" ) )
+		formatString: \$#,0.00
+		displayFolder: 3 Tax
+		lineageTag: 10296ba6-2745-43fa-a8fd-74a95f3c5887
+
+	measure 'Excise PY' = CALCULATE ( [Excise], SAMEPERIODLASTYEAR ( DimDate[Date] ) )
+		formatString: \$#,0;(\$#,0);\$#,0
+		displayFolder: 3 Tax
+		lineageTag: bdf4bba9-849a-4847-b587-83b28ff589f0
+
+	measure 'Excise per Pack' = DIVIDE ( [Excise], [Packs] )
+		formatString: \$#,0.00
+		displayFolder: 3 Tax
+		lineageTag: cea7c31f-69e8-42fd-aefa-4dffbc183f9d
+
+	measure 'Net Revenue' = SUM ( FactSales[NetRevenueExTax] )
+		formatString: \$#,0;(\$#,0);\$#,0
+		displayFolder: 4 Revenue & Profit
+		lineageTag: b41198a5-6f8a-472a-ade3-1392c2bf2b9e
+
+	measure 'Net Revenue PY' = CALCULATE ( [Net Revenue], SAMEPERIODLASTYEAR ( DimDate[Date] ) )
+		formatString: \$#,0;(\$#,0);\$#,0
+		displayFolder: 4 Revenue & Profit
+		lineageTag: 3bb1ed43-3808-42f4-9ee0-91d391512805
+
+	measure 'Net Revenue YoY %' = IF ( [Net Revenue PY] > 0, DIVIDE ( [Net Revenue] - [Net Revenue PY], [Net Revenue PY] ) )
+		formatString: 0.0%;-0.0%;0.0%
+		displayFolder: 4 Revenue & Profit
+		lineageTag: abf155fc-26b1-48ee-ba9d-3c35b1650276
+
+	measure 'Net Revenue FYTD' = TOTALYTD ( [Net Revenue], DimDate[Date], "30/6" )
+		formatString: \$#,0;(\$#,0);\$#,0
+		displayFolder: 4 Revenue & Profit
+		lineageTag: b432820e-9516-456a-9654-07acc3bbd050
+
+	measure COGS = SUM ( FactSales[COGSAmt] )
+		formatString: \$#,0;(\$#,0);\$#,0
+		displayFolder: 4 Revenue & Profit
+		lineageTag: e9cc7bac-4fd7-457b-a60b-88db92a7e133
+
+	measure 'Gross Profit' = SUM ( FactSales[GrossProfit] )
+		formatString: \$#,0;(\$#,0);\$#,0
+		displayFolder: 4 Revenue & Profit
+		lineageTag: 7e565f96-e1ef-4e06-99a9-ebe91a60a17f
+
+	measure 'Gross Profit PY' = CALCULATE ( [Gross Profit], SAMEPERIODLASTYEAR ( DimDate[Date] ) )
+		formatString: \$#,0;(\$#,0);\$#,0
+		displayFolder: 4 Revenue & Profit
+		lineageTag: 86cbc320-e535-44e0-b646-cb02b1fbd3e9
+
+	measure 'Gross Profit YoY %' = IF ( [Gross Profit PY] > 0, DIVIDE ( [Gross Profit] - [Gross Profit PY], [Gross Profit PY] ) )
+		formatString: 0.0%;-0.0%;0.0%
+		displayFolder: 4 Revenue & Profit
+		lineageTag: 5bf07455-0546-40f5-a55a-718c8bfd53f6
+
+	measure 'GP %' = DIVIDE ( [Gross Profit], [Net Revenue] )
+		formatString: 0.0%
+		displayFolder: 4 Revenue & Profit
+		lineageTag: 2bf7451a-bbce-4ecb-86b3-963d29ceda14
+
+	measure 'Net Revenue per Pack' = DIVIDE ( [Net Revenue], [Packs] )
+		formatString: \$#,0.00
+		displayFolder: 4 Revenue & Profit
+		lineageTag: 125862c8-1b12-44fb-8fc5-f4f848fe7ea1
+
+	measure 'GP per Pack' = DIVIDE ( [Gross Profit], [Packs] )
+		formatString: \$#,0.00
+		displayFolder: 4 Revenue & Profit
+		lineageTag: 109cf4ae-f434-42c6-b5f6-a8a23f343b84
+
+	measure 'PVM Volume Effect' =
+			VAR PacksCY = [Packs]
+			VAR PacksPY = [Packs PY]
+			VAR AvgPricePY = DIVIDE ( [Net Revenue PY], PacksPY )
+			RETURN IF ( PacksPY > 0, ( PacksCY - PacksPY ) * AvgPricePY )
+		formatString: \$#,0;(\$#,0);\$#,0
+		displayFolder: 5 Price Volume Mix
+		lineageTag: f6fef7b9-a37f-4a7f-9e37-1abe28cccb97
+
+	measure 'PVM Price Effect' =
+			IF ( [Packs PY] > 0,
+			    SUMX ( VALUES ( DimProduct[SKU] ),
+			        VAR c = [Packs]
+			        VAR pCY = DIVIDE ( [Net Revenue], c )
+			        VAR pPY = DIVIDE ( [Net Revenue PY], [Packs PY] )
+			        RETURN IF ( c > 0 && [Packs PY] > 0, c * ( pCY - pPY ) )
+			    )
+			)
+		formatString: \$#,0;(\$#,0);\$#,0
+		displayFolder: 5 Price Volume Mix
+		lineageTag: d51b70db-c593-4847-adde-3c706eeed88a
+
+	measure 'PVM Mix Effect' = IF ( [Packs PY] > 0, ( [Net Revenue] - [Net Revenue PY] ) - [PVM Volume Effect] - [PVM Price Effect] )
+		formatString: \$#,0;(\$#,0);\$#,0
+		displayFolder: 5 Price Volume Mix
+		lineageTag: e1fa87fe-c695-44f5-b3ce-23e444aeee93
+
+	measure 'Net Revenue Change' = IF ( [Net Revenue PY] > 0, [Net Revenue] - [Net Revenue PY] )
+		formatString: \$#,0;(\$#,0);\$#,0
+		displayFolder: 5 Price Volume Mix
+		lineageTag: 9b63ef51-ffee-481d-b4e5-444ab4a4dcde
+
+	measure 'Promo Packs' = SUM ( FactSales[PromoPacks] )
+		formatString: #,0
+		displayFolder: 6 Promotions
+		lineageTag: 6c54c88e-392d-403f-947f-2c3d7b0e076b
+
+	measure 'Promo Baseline Packs' = SUM ( FactSales[PromoBaselinePacks] )
+		formatString: #,0
+		displayFolder: 6 Promotions
+		lineageTag: 1a4dac19-9824-4cb3-875f-14b5b414f83b
+
+	measure 'Promo Uplift %' = IF ( [Promo Baseline Packs] > 0, DIVIDE ( [Promo Packs], [Promo Baseline Packs] ) - 1 )
+		formatString: 0.0%
+		displayFolder: 6 Promotions
+		lineageTag: 7fec68bb-0797-4a8b-8758-c12286b6f933
+
+	measure 'Promo Incremental GP' = SUM ( FactSales[PromoIncrementalGP] )
+		formatString: \$#,0;(\$#,0);\$#,0
+		displayFolder: 6 Promotions
+		lineageTag: a687bd9f-0d3b-48c0-a605-f646c70585f1
+
+	measure 'Promo ROI' = IF ( [Promo Discount] > 0, DIVIDE ( [Promo Incremental GP], [Promo Discount] ) )
+		formatString: 0.0%;-0.0%;0.0%
+		displayFolder: 6 Promotions
+		lineageTag: 17192dd3-fe26-4e52-b61a-eae4313d412a
+
+	measure 'Promo Share of Volume' = DIVIDE ( [Promo Packs], [Packs] )
+		formatString: 0.0%
+		displayFolder: 6 Promotions
+		lineageTag: 18af52a4-e099-447d-bf5c-8387c6c9da90
+
+	measure 'Avg Promo Depth' = DIVIDE ( CALCULATE ( [Promo Discount] ), SUM ( FactSales[PromoGrossSales] ) )
+		formatString: 0.0%
+		displayFolder: 6 Promotions
+		lineageTag: 80cf1ad5-a911-4554-bf18-fcbb5cef7634
+
+	measure 'GP Rank' = IF ( [Gross Profit] <> 0, RANKX ( CALCULATETABLE ( VALUES ( DimProduct[Product] ), ALLSELECTED ( DimProduct ) ), CALCULATE ( [Gross Profit], ALLEXCEPT ( DimProduct, DimProduct[Product] ) ), , DESC ) )
+		formatString: 0
+		displayFolder: 7 Portfolio
+		lineageTag: 7f5ca772-adbd-432d-9c61-c173edadf560
+
+	measure 'Cumulative GP %' =
+			VAR cur = [Gross Profit]
+			VAR tbl = ADDCOLUMNS ( CALCULATETABLE ( VALUES ( DimProduct[Product] ), ALLSELECTED ( DimProduct ) ), "@gp", CALCULATE ( [Gross Profit], ALLEXCEPT ( DimProduct, DimProduct[Product] ) ) )
+			RETURN IF ( NOT ISBLANK ( cur ), DIVIDE ( SUMX ( FILTER ( tbl, [@gp] >= cur ), [@gp] ), SUMX ( tbl, [@gp] ) ) )
+		formatString: 0.0%
+		displayFolder: 7 Portfolio
+		lineageTag: 91a70e0c-335d-413d-8e44-343ded06f125
+
+	measure 'Pareto Class' =
+			VAR c = [Cumulative GP %]
+			RETURN IF ( ISBLANK ( c ), BLANK (), IF ( c <= 0.8, "A - Core", IF ( c <= 0.95, "B - Support", "C - Tail" ) ) )
+		displayFolder: 7 Portfolio
+		lineageTag: a501f442-0034-4c52-8e35-62348b3da7fd
+
+	measure 'Avg Est Shelf Price' = DIVIDE ( SUMX ( FactSales, FactSales[EstShelfPrice] * FactSales[PacksQty] ), [Packs] )
+		formatString: \$#,0.00
+		displayFolder: 7 Portfolio
+		lineageTag: d38efdea-6d23-40d5-9634-89fb41fd0e5c
+
+	measure 'Latest Est Shelf Price' =
+			VAR lastM = CALCULATE ( MAX ( FactSales[MonthStart] ), ALL ( DimDate ) )
+			RETURN CALCULATE ( DIVIDE ( SUMX ( FactSales, FactSales[EstShelfPrice] * FactSales[PacksQty] ), SUM ( FactSales[PacksQty] ) ), FactSales[MonthStart] = lastM, ALL ( DimDate ) )
+		formatString: \$#,0.00
+		displayFolder: 7 Portfolio
+		lineageTag: 15c8e07e-ebe3-4866-998f-ead23ed83221
+
+	measure 'Price Point Headroom' =
+			VAR pp = MAX ( DimProduct[PricePoint] )
+			RETURN IF ( HASONEVALUE ( DimProduct[SKU] ) && pp > 0, pp - ( CEILING ( [Latest Est Shelf Price], 1 ) - 0.01 ) )
+		formatString: \$#,0.00;(\$#,0.00);\$0.00
+		displayFolder: 7 Portfolio
+		lineageTag: 033dd0e6-61ff-4c6c-83ad-468bc9cc7dbf
+
+	measure 'SKUs Over Price Point' = COUNTROWS ( FILTER ( VALUES ( DimProduct[SKU] ), CALCULATE ( MAX ( DimProduct[PricePoint] ) ) > 0 && [Price Point Headroom] < 0 ) )
+		formatString: 0
+		displayFolder: 7 Portfolio
+		lineageTag: 95626b4d-ec27-4104-aa80-dc725600e006
+
+	measure 'Active Outlets' = DISTINCTCOUNT ( FactSales[CustomerID] )
+		formatString: #,0
+		displayFolder: 8 Customers
+		lineageTag: 26f15b34-f807-427b-8bb8-bc40d13bccf5
+
+	measure 'Net Revenue per Outlet' = DIVIDE ( [Net Revenue], [Active Outlets] )
+		formatString: \$#,0
+		displayFolder: 8 Customers
+		lineageTag: d7175b53-8b61-4853-a816-8cfc819a2a34
+
+	measure 'Title Selection' = "Southerly Drinks Co. | " & IF ( ISFILTERED ( DimDate[FY] ), CONCATENATEX ( VALUES ( DimDate[FY] ), DimDate[FY], ", " ), "All periods" )
+		displayFolder: 9 Labels
+		lineageTag: 05ba3a7a-a6ab-43f8-9d6c-27e229a32fac
+
+	column MonthStart
+		dataType: dateTime
+		isHidden
+		formatString: Long Date
+		lineageTag: 01446357-8f18-4076-bc72-eec4ba1398d2
+		summarizeBy: none
+		sourceColumn: MonthStart
+
+		annotation UnderlyingDateTimeDataType = Date
+
+		annotation SummarizationSetBy = Automatic
+
+	column CustomerID
+		dataType: string
+		isHidden
+		lineageTag: 0ec3d278-b18a-46d3-acb3-db1e6b749151
+		sourceColumn: CustomerID
+
+	column SKU
+		dataType: string
+		isHidden
+		lineageTag: 1571ad45-65e2-4b0a-9b0c-571290998e99
+		sourceColumn: SKU
+
+	column PacksQty
+		dataType: int64
+		isHidden
+		lineageTag: 38c363dd-4256-4660-9aaa-3707b99bcd63
+		sourceColumn: Packs
+
+	column BaselinePacks
+		dataType: double
+		isHidden
+		lineageTag: fcb97684-a8af-4dbc-a31c-4201f0f8b862
+		sourceColumn: BaselinePacks
+
+	column GrossSales
+		dataType: double
+		isHidden
+		lineageTag: 5e5a1e32-1bef-4470-9312-5e53bf22a8c6
+		sourceColumn: GrossSales
+
+	column PromoDiscount
+		dataType: double
+		isHidden
+		lineageTag: 3f34b4b6-6556-47f6-a0d0-0ef1419d6394
+		sourceColumn: PromoDiscount
+
+	column RebatesAmt
+		dataType: double
+		isHidden
+		lineageTag: 7f7b3e2b-9ca5-431b-b30d-dc230fe5f71a
+		sourceColumn: Rebates
+
+	column NetSales
+		dataType: double
+		isHidden
+		lineageTag: aca913ac-9f59-4536-9972-2e35cbf28237
+		sourceColumn: NetSales
+
+	column ExciseAmt
+		dataType: double
+		isHidden
+		lineageTag: 03018486-1537-4fa5-9926-608ac2753dbc
+		sourceColumn: Excise
+
+	column DepositLevy
+		dataType: double
+		isHidden
+		lineageTag: 6f422958-ccf3-40a7-9c88-3baa65439b90
+		sourceColumn: DepositLevy
+
+	column WETAmt
+		dataType: double
+		isHidden
+		lineageTag: 998aae99-cd6e-4caa-b8dd-f300ff46e244
+		sourceColumn: WET
+
+	column NetRevenueExTax
+		dataType: double
+		isHidden
+		lineageTag: d343465e-a6db-4ef6-850b-b9a55ff49e08
+		sourceColumn: NetRevenueExTax
+
+	column COGSAmt
+		dataType: double
+		isHidden
+		lineageTag: a7b2017b-9762-4197-8a3f-b49da52b7bfd
+		sourceColumn: COGS
+
+	column GrossProfit
+		dataType: double
+		isHidden
+		lineageTag: def4bfae-1fc2-42aa-99e8-ecfa83bf6678
+		sourceColumn: GrossProfit
+
+	column LitresAlcohol
+		dataType: double
+		isHidden
+		lineageTag: 56dc367a-8aae-459c-bf6f-edc6fb931c2a
+		sourceColumn: LitresAlcohol
+
+	column PromoPacks
+		dataType: int64
+		isHidden
+		lineageTag: 9e1f4a55-e96b-4e49-acac-1a544ad74b50
+		sourceColumn: PromoPacks
+
+	column PromoBaselinePacks
+		dataType: double
+		isHidden
+		lineageTag: 453d4379-fa49-438c-847f-7a50688e28ed
+		sourceColumn: PromoBaselinePacks
+
+	column PromoGrossSales
+		dataType: double
+		isHidden
+		lineageTag: d67b6c4d-5e9b-48df-acd8-9a262999a1d6
+		sourceColumn: PromoGrossSales
+
+	column PromoIncrementalGP
+		dataType: double
+		isHidden
+		lineageTag: 2bc39951-73fc-40de-a6e7-1366d724db8b
+		sourceColumn: PromoIncrementalGP
+
+	column PromoWeeks
+		dataType: int64
+		isHidden
+		lineageTag: 7d2ddde7-2247-49f6-8844-7d9913101e9e
+		sourceColumn: PromoWeeks
+
+	column EstShelfPrice
+		dataType: double
+		isHidden
+		lineageTag: af2a4bb2-e54e-4036-b4c3-0eabecab43fa
+		sourceColumn: EstShelfPrice
+
+	partition FactSales = m
+		mode: import
+		source = let Source = Csv.Document(File.Contents("C:\Users\AB Tech\Desktop\Project - 1\Power BI\Data\FactSales.csv"), [Delimiter = ",", Encoding = 65001, QuoteStyle = QuoteStyle.Csv]), Promoted = Table.PromoteHeaders(Source, [PromoteAllScalars = true]), Typed = Table.TransformColumnTypes(Promoted, {{"MonthStart", type date}, {"CustomerID", type text}, {"SKU", type text}, {"Packs", Int64.Type}, {"BaselinePacks", type number}, {"GrossSales", type number}, {"PromoDiscount", type number}, {"Rebates", type number}, {"NetSales", type number}, {"Excise", type number}, {"DepositLevy", type number}, {"WET", type number}, {"NetRevenueExTax", type number}, {"COGS", type number}, {"GrossProfit", type number}, {"LitresAlcohol", type number}, {"PromoPacks", Int64.Type}, {"PromoBaselinePacks", type number}, {"PromoGrossSales", type number}, {"PromoIncrementalGP", type number}, {"PromoWeeks", Int64.Type}, {"EstShelfPrice", type number}}, "en-US") in Typed
+
